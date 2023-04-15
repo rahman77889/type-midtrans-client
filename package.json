@@ -1,6 +1,6 @@
 {
   "name": "@abdulrahmanreza/midtrans-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Unofficial Type for Typescript Midtrans Payment API Client for Typescript",
   "main": "index.js",
   "scripts": {
