@@ -1,31 +1,16 @@
-Midtrans Client - Node JS
-===============
-[![NPM](https://nodei.co/npm/midtrans-client.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/midtrans-client/)
+Types Midtrans Client - Typescript
+==================================
 
-[![npm version](https://img.shields.io/npm/v/midtrans-client.svg?style=flat-square)](https://www.npmjs.org/package/midtrans-client)
-[![Build Status](https://travis-ci.org/rizdaprasetya/midtrans-nodejs-client.svg?branch=master)](https://travis-ci.org/rizdaprasetya/midtrans-nodejs-client)
-![NPM download/month](https://img.shields.io/npm/dm/midtrans-client.svg)
-![NPM download total](https://img.shields.io/npm/dt/midtrans-client.svg)
+Midtrans ❤️ Typescript! 
 
-Midtrans ❤️ Node JS! 
-
-This is the Official Node JS API client/library for Midtrans Payment API. Visit [https://midtrans.com](https://midtrans.com). More information about the product and see documentation at [http://docs.midtrans.com](https://docs.midtrans.com) for more technical details.
+This is the Unofficial Types Typescript API client/library for Midtrans Payment API. Visit [https://midtrans.com](https://midtrans.com). More information about the product and see documentation at [http://docs.midtrans.com](https://docs.midtrans.com) for more technical details.
 
 ## 1. Installation
 
 ### 1.a Using NPM
 
 ```
-npm install --save midtrans-client
-```
-
-### 1.b Manual Installation
-
-If you are not using NPM, you can clone or [download](https://github.com/midtrans/midtrans-nodejs-client/archive/master.zip) this repository.
-Then require from `index.js` file.
-
-```javascript
-let midtransClient = require('./midtrans-client-nodejs/index.js');
+npm install --save @types/midtrans-client
 ```
 
 ## 2. Usage
@@ -45,8 +30,9 @@ Get your client key and server key from [Midtrans Dashboard](https://dashboard.m
 
 Create API client object
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Core API instance
 let coreApi = new midtransClient.CoreApi({
         isProduction : false,
@@ -56,8 +42,9 @@ let coreApi = new midtransClient.CoreApi({
 ```
 
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Snap API instance
 let snap = new midtransClient.Snap({
         isProduction : false,
@@ -69,8 +56,8 @@ let snap = new midtransClient.Snap({
 You can also re-set config using `Snap.apiConfig.set( ... )`
 example:
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
 
 // Create Snap API instance, empty config
 let snap = new midtransClient.Snap();
@@ -86,8 +73,8 @@ snap.apiConfig.set({serverKey : 'YOUR_SERVER_KEY'});
 ```
 
 You can also set config directly from attribute
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
 
 // Create Snap API instance, empty config
 let snap = new midtransClient.Snap();
@@ -102,7 +89,7 @@ snap.apiConfig.clientKey = 'YOUR_CLIENT_KEY';
 You can see Snap example [here](examples/snap).
 
 Available methods for `Snap` class
-```javascript
+```typescript
 // return Snap API /transaction response as Promise of Object
 createTransaction(parameter)
 
@@ -117,8 +104,9 @@ createTransactionRedirectUrl(parameter)
 
 #### Get Snap Token
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Snap API instance
 let snap = new midtransClient.Snap({
         isProduction : false,
@@ -195,8 +183,9 @@ Also available as examples [here](examples/snap).
 
 #### Get Redirection URL of a Payment Page
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Snap API instance
 let snap = new midtransClient.Snap({
         isProduction : false,
@@ -234,7 +223,7 @@ snap.createTransaction(parameter)
 You can see some Core API examples [here](examples/coreApi).
 
 Available methods for `CoreApi` class
-```javascript
+```typescript
 /**
  * Do `/charge` API request to Core API
  * @param  {Object} parameter - object of Core API JSON body as parameter, will be converted to JSON (more params detail refer to: https://api-docs.midtrans.com)
@@ -278,8 +267,9 @@ Get token should be handled on  Frontend please refer to [API docs](https://api-
 
 #### Credit Card Charge
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Core API instance
 let core = new midtransClient.CoreApi({
         isProduction : false,
@@ -324,8 +314,9 @@ To use subscription API for credit card, you should first obtain the 1-click sav
 
 You will receive `saved_token_id` as part of the response when the initial card payment is accepted (will also available in the HTTP notification's JSON), [refer to this docs.](https://docs.midtrans.com/en/core-api/advanced-features?id=sample-3ds-authenticate-json-response-for-the-first-transaction)
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Core API / Snap instance (both have shared `transactions` methods)
 let core = new midtransClient.CoreAPi({
         isProduction : false,
@@ -399,8 +390,9 @@ You can see some Subscription API examples [here](examples/subscription)
 ### 2.2.E Tokenization API
 You can see some Tokenization API examples [here](examples/tokenization), [Tokenization API Docs](https://api-docs.midtrans.com/#gopay-tokenization)
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Core API / Snap instance (both have shared `transactions` methods)
 let core = new midtransClient.CoreApi({
         isProduction : false,
@@ -446,8 +438,9 @@ Create separated web endpoint (notification url) to receive HTTP POST notificati
 HTTP notification will be sent whenever transaction status is changed.
 Example also available [here](examples/transactionActions/notificationExample.js)
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Core API / Snap instance (both have shared `transactions` methods)
 let apiClient = new midtransClient.Snap({
         isProduction : false,
@@ -641,8 +634,9 @@ Get your API key from [Midtrans Iris Dashboard](https://app.midtrans.com/iris)
 
 Create API client object. Note: the serverKey means your API key.
 
-```javascript
-const midtransClient = require('midtrans-client');
+```typescript
+import * as midtransClient from 'midtrans-client';
+
 // Create Core API instance
 let iris = new midtransClient.Iris({
         isProduction : false,
