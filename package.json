@@ -1,18 +1,18 @@
 {
-  "name": "@types/midtrans-client",
-  "version": "1.0.0",
-  "description": "Unofficial Midtrans Payment API Client for Node JS",
+  "name": "@abdulrahmanreza/midtrans-client",
+  "version": "1.0.1",
+  "description": "Unofficial Type for Typescript Midtrans Payment API Client for Typescript",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/midtrans/midtrans-nodejs-client.git"
+    "url": "https://github.com/rahman77889/type-midtrans-client"
   },
   "homepage": "https://github.com/midtrans/midtrans-nodejs-client",
   "bugs": {
-    "url": "https://github.com/midtrans/midtrans-nodejs-client/issues"
+    "url": "https://github.com/rahman77889/type-midtrans-client/issues"
   },
   "keywords": [
     "payment",
@@ -21,7 +21,7 @@
     "midtrans",
     "node"
   ],
-  "author": "rizda.prasetya@midtrans.com",
+  "author": "rahman77889@gmail.com",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.26.0",
