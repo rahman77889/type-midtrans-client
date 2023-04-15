@@ -10,8 +10,16 @@ This is the Unofficial Types Typescript API client/library for Midtrans Payment 
 ### 1.a Using NPM
 
 ```
-npm install --save @types/midtrans-client
+npm install --save @abdulrahmanreza/midtrans-client
 ```
+
+add ./node_modules/@abdulrahmanreza to typeRoots of tsconfig.json 
+
+```
+"typeRoots": ["./node_modules/@types", "./node_modules/@abdulrahmanreza"]
+```
+
+
 
 ## 2. Usage
 
